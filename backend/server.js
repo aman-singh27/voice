@@ -6,6 +6,9 @@ import detectRouter from './routes/detect.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust proxy - required when running behind Render/Heroku/Railway
+app.set('trust proxy', 1);
+
 // Security headers (helmet) - applied first
 app.use(helmet({
     contentSecurityPolicy: false // Disabled to avoid blocking frontend requests
