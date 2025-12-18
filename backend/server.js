@@ -18,9 +18,17 @@ app.use(helmet({
 // CORS: Allow frontend URL from environment variable (production)
 const corsOptions = {
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 };
+
+// Enable CORS for all routes
 app.use(cors(corsOptions));
+
+// Explicit preflight handler for all routes
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -55,7 +63,17 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`🚀 VoiceGuard API running on http://localhost:${PORT}`);
-    console.log(`📊 Health check: http://localhost:${PORT}/health`);
-    console.log(`🎯 Detection endpoint: http://localhost:${PORT}/api/detect`);
+    console.log('='.repeat(60));
+    console.log('🚀 VoiceGuard API Server Started');
+    console.log('='.repeat(60));
+    console.log(`📍 Server URL: http://localhost:${PORT}`);
+    console.log(`📊 Health Check: http://localhost:${PORT}/health`);
+    console.log(`🎯 Detection API: http://localhost:${PORT}/api/detect`);
+    console.log('─'.repeat(60));
+    console.log(`🌐 CORS Origin: ${corsOptions.origin}`);
+    console.log(`🔒 Trust Proxy: Enabled`);
+    console.log(`🛡️  Helmet Security: Enabled`);
+    console.log('─'.repeat(60));
+    console.log('✅ All routes registered successfully');
+    console.log('='.repeat(60));
 });
