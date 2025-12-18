@@ -23,7 +23,7 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-mono font-medium mb-6 border border-blue-100">
                         <Code className="w-3 h-3 mr-2" />
-                        PROJECT SUBMISSION 2025
+                        VOICE GUARDPROJECT SUBMISSION 2025
                     </div>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         VoiceGuard: End-to-End <br className="hidden sm:inline" />Deepfake Detection System
@@ -378,8 +378,8 @@ export default function Home() {
             {/* Footer - Academic/Project Focus */}
             <footer className="py-12 border-t border-gray-200 bg-white text-center">
                 <div className="max-w-7xl mx-auto px-6">
-                    <p className="text-gray-500 text-sm mb-2">Project Submission for [Course/Event Name]</p>
-                    <p className="text-gray-400 text-xs">Developed by [Your Name] • 2025</p>
+                    <p className="text-gray-500 text-sm mb-2">Project Submission for VoiceGuard</p>
+                    <p className="text-gray-400 text-xs">Developed by Aman Singh • 2025</p>
                 </div>
             </footer>
         </PageWrapper>
